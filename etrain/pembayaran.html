@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Etrain</title>
+    <link rel="icon" href="img/logo_hitam.png">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- animate CSS -->
+    <link rel="stylesheet" href="css/animate.css">
+    <!-- owl carousel CSS -->
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <!-- themify CSS -->
+    <link rel="stylesheet" href="css/themify-icons.css">
+    <!-- flaticon CSS -->
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/nice-select.css">
+    <!-- font awesome CSS -->
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <!-- swiper CSS -->
+    <link rel="stylesheet" href="css/slick.css">
+    <!-- style CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+        crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <!--::header part start::-->
+    <header class="main_menu home_menu">
+        <div class="container">
+            <div class="row align-items-center" style="background-color:#5e72e4">
+                <div class="col-lg-12">
+                    <nav class="navbar navbar-expand-lg navbar-light">
+                        <a class="navbar-brand" href="index.html">
+                            <img src="img/logoputih.png" alt="logo" style="max-width:100px"> </a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse main-menu-item justify-content-end" id="navbarSupportedContent">
+                            <ul class="navbar-nav align-items-center">
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="index.html">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="searchBengkel.html">Cari Bengkel</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="mitra.html">Mitra</a>
+                                </li>
+                        </div>
+                        </ul>
+                </div>
+                </nav>
+            </div>
+        </div>
+        </div>
+    </header>
+
+    <section class="pembayaran" style="margin-top:150px">
+        <div class="container">
+            <h1 style="color:#5e72e4;margin-bottom:30px">Pembayaran</h1>
+            <form action="/action_page.php">
+                <label for="namaPemesan">Name</label>
+                <input type="text" id="namaPemesan" name="namaPemesan" placeholder="Masukkan nama.." required>
+
+                <label for="alamat">Alamat</label>
+                <input type="text" id="alamat" name="alamat" placeholder="Masukkan alamat.." required>
+
+                <label for="phone">No Hp</label>
+                <input type="number" id="phone" name="phone" placeholder="Masukkan No hp.." required>
+
+                <hr style="border:1px solid">
+                <h1 style="color:#5e72e4;margin-bottom:20px;font-size:20px">Ringkasan Pesanan</h1>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <li>
+                            <a href="" name="jenisLayanan" style="color:#000;font-size:15px">Tune Up</a>
+                        </li>
+                    </div>
+                    <div class="col-sm-6">
+                        <p name="hargaLayanan" style="color:#000;font-size:15px">Rp 50.000</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                    </div>
+                    <div class="col-sm-6">
+                        <p style="color:#000;margin-top:30px;font-size:15px">Total : </p>
+                    </div>
+                </div>
+
+                <button type="button" data-toggle="modal" data-target="#bayar" class="btn_3" style="margin-bottom:100px">
+                    Bayar</button>
+
+                <div class="modal fade" id="bayar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="margin-top:60px;margin-bottom:50px">
+                    <div class="modal-dialog modal-lg" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel" style="color:#5e72e4">Pilih Metode Pembayaran Anda</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body" style="text-align:center">
+                                <button class="accordion"><span><img src="img/dana.png" alt=""></span></button>
+                                <div class="panel">
+                                    <p>110 789 10202</p>
+                                        
+                                </div>
+
+                                <button class="accordion"><span><img src="img/ovo.png" alt="" style="width:80px"></span></button>
+                                <div class="panel">
+                                    <p>2230 249438 399</p>
+                                </div>
+
+                                <button class="accordion"><span><img src="img/bca.png" alt=""></span></button>
+                                <div class="panel">
+                                    <p>777 185 6695</p>
+                                </div>
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" style="border:2px solid black">
+                                    <a href="pembayaran.html" style="color:#000">Checkout</a>
+                                </button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+
+    </section>
+
+    <!-- jquery plugins here-->
+    <!-- jquery -->
+    <script src="js/jquery-1.12.1.min.js"></script>
+    <!-- popper js -->
+    <script src="js/popper.min.js"></script>
+    <!-- bootstrap js -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- easing js -->
+    <script src="js/jquery.magnific-popup.js"></script>
+    <!-- swiper js -->
+    <script src="js/swiper.min.js"></script>
+    <!-- swiper js -->
+    <script src="js/masonry.pkgd.js"></script>
+    <!-- particles js -->
+    <script src="js/owl.carousel.min.js"></script>
+
+    <!-- swiper js -->
+    <script src="js/slick.min.js"></script>
+    <script src="js/jquery.counterup.min.js"></script>
+    <script src="js/waypoints.min.js"></script>
+    <!-- custom js -->
+    <script src="js/custom.js"></script>
+
+    <script>
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.maxHeight) {
+                    panel.style.maxHeight = null;
+                } else {
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                }
+            });
+        }
+    </script>
+
+</body>
+
+</html>

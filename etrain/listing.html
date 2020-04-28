@@ -25,6 +25,13 @@
 	<!-- style CSS -->
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+	<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"
+	    crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
+	    crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+	    crossorigin="anonymous"></script>
+
 </head>
 
 <body>
@@ -42,7 +49,7 @@
 						</button>
 						<div class="collapse navbar-collapse main-menu-item justify-content-end" id="navbarSupportedContent">
 							<ul class="navbar-nav align-items-center">
-								<li class="nav-item active">
+								<li class="nav-item ">
 									<a class="nav-link" href="index.html">Home</a>
 								</li>
 								<li class="nav-item">
@@ -51,28 +58,62 @@
 								<li class="nav-item">
 									<a class="nav-link" href="mitra.html">Mitra</a>
 								</li>
-							</ul>
+								<!-- ************************************* -->
+								<!-- Cart -->
+								<button type="button" class="btn" data-toggle="modal" data-target="#cart" style="background-color:#5e72e4;color:#fff;font-family:Roboto;font-weight:600"><i class="fas fa-shopping-cart"></i>
+									<span class="numberCircle">
+									<span class="total-count"></span></span></button>
+								
 						</div>
-					</nav>
+						</ul>
 				</div>
+				</nav>
 			</div>
+		</div>
 		</div>
 	</header>
 	<!-- Header part end-->
+	<!-- Modal -->
+	<div class="modal fade" id="cart" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="margin-top:10%">
+		<div class="modal-dialog modal-lg" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Cart</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<table class="show-cart table">
+
+					</table>
+					<div>Total price: Rp
+						<span class="total-cart"></span>
+					</div>
+				</div>
+				<div class="modal-footer">
+						<button class="clear-cart btn btn-danger">Clear Cart</button>
+					
+					<button type="button" class="btn btn-primary"><a href="pembayaran.html" style="color:#fff">Checkout</a></button>
+					
+				</div>
+			</div>
+		</div>
+	</div>
 
 	<section class="listing listing_bg">
 		<div class="container">
 			<h4>Bengkel Mobil</h4>
-			<p>Mitra Bengkel Berpengalaman dan Terpercaya <br> Dalam Menangani Setiap Permasalahan Kendaraan Anda</p>
+			<p>Mitra Bengkel Berpengalaman dan Terpercaya
+				<br> Dalam Menangani Setiap Permasalahan Kendaraan Anda</p>
 		</div>
 	</section>
 
 	<!-- Start Sample Area -->
-	<section class="sample-text-area" style="margin-top:40px">
-		<div class="row" >
-			<div class="col-lg-8 col-xl-8" >
+	<section class="sample-text-area">
+		<div class="row">
+			<div class="col-lg-8 col-xl-8">
 				<div class="container py-3" style="margin-top:20px;">
-					<a href="layanan.html">
 					<div class="card" style="margin-top:20px;">
 						<div class="row ">
 							<div class="col-md-5">
@@ -89,11 +130,11 @@
 										<span class="fas fa-star text-warning"></span>
 										<span class="fas fa-star text-warning"></span>
 									</p>
+									<a href="#" data-name="Tune Up" data-price="100000" class="add-to-cart btn btn-primary">Add to cart</a>
 								</div>
 							</div>
 						</div>
 					</div>
-				</a>
 					<div class="card" style="margin-top:20px;">
 						<div class="row ">
 							<div class="col-md-5">
@@ -110,11 +151,12 @@
 										<span class="fas fa-star text-warning"></span>
 										<span class="fas fa-star text-warning"></span>
 									</p>
+									<a href="#" data-name="Body Repair" data-price="150000" class="add-to-cart btn btn-primary">Add to cart</a>
 								</div>
 							</div>
 						</div>
 					</div>
-					<div class="card"style="margin-top:20px;">
+					<div class="card" style="margin-top:20px;">
 						<div class="row ">
 							<div class="col-md-5">
 								<img src="https://bengkeljakartaban.files.wordpress.com/2014/06/jakarta-ban.jpg" class="w-100">
@@ -130,6 +172,7 @@
 										<span class="fas fa-star text-warning"></span>
 										<span class="fas fa-star text-warning"></span>
 									</p>
+									<a href="#" data-name="Ganti Ban" data-price="10000" class="add-to-cart btn btn-primary">Add to cart</a>
 								</div>
 							</div>
 						</div>
@@ -157,61 +200,83 @@
 							</div>
 							<hr>
 							<div class="pb-3"></div>
-							<p style="margin-top:-20px">Price Range</p>
-							<div slider id="slider-distance">
-								<div>
-									<div inverse-left style="width:70%;"></div>
-									<div inverse-right style="width:70%;"></div>
-									<div range style="left:0%;right:0%;"></div>
-									<span thumb style="left:0%;"></span>
-									<span thumb style="left:100%;"></span>
-									<div sign style="left:0%;">
-										<span id="value">10000</span>
+							<p style="margin-top:-20px;color:#2473fa;font-size:18px;font-family:Poppins;font-weight:500">Price Range</p>
+							<!-- With number fields -->
+							<div class="filter level-filter level-req">
+								<div id="rangeSlider" class="range-slider">
+									<div class="number-group">
+										<input class="number-input" type="number" value="10000" min="0" max="1000000"  style="color:#fff"/>
+										<input class="number-input" type="number" value="1000000" min="0" max="1000000"  style="color:#fff"/>
 									</div>
-									<div sign style="left:100%;">
-										<span id="value">1000000</span>
+									<div class="range-group">
+										<input class="range-input" value="10000" min="0" max="1000000" step="10000" type="range" />
+										<input class="range-input" value="1000000" min="0" max="1000000" step="10000" type="range" />
 									</div>
 								</div>
-								<input type="range" value="10000" max="1000000" min="10000" step="5000" oninput="
-									this.value=Math.min(this.value,this.parentNode.childNodes[5].value-1);
-									let value = (this.value/parseInt(this.max))*100
-									var children = this.parentNode.childNodes[1].childNodes;
-									children[1].style.width=value+'%';
-									children[5].style.left=value+'%';
-									children[7].style.left=value+'%';children[11].style.left=value+'%';
-									children[11].childNodes[1].innerHTML=this.value;" />
-
-								<input type="range" value="1000000" max="1000000" min="10000" step="5000" oninput="
-									this.value=Math.max(this.value,this.parentNode.childNodes[3].value-(-1));
-									let value = (this.value/parseInt(this.max))*100
-									var children = this.parentNode.childNodes[1].childNodes;
-									children[3].style.width=(100-value)+'%';
-									children[5].style.right=(100-value)+'%';
-									children[9].style.left=value+'%';children[13].style.left=value+'%';
-									children[13].childNodes[1].innerHTML=this.value;" />
 							</div>
+							<!-- // filter level-filter -->
 							<button type="btn" class="btn btn-primary" style="margin-top:20px;width:100%;">Find Now</button>
 						</div>
-
 					</div>
+					<div class="col-lg-4 col-xl-4"></div>
+					<div class="col-lg-4 col-xl-4"></div>
 				</div>
-				<div class="col-lg-4 col-xl-4"></div>
-				<div class="col-lg-4 col-xl-4"></div>
 			</div>
-		</div>
 		</div>
 	</section>
 	<!-- End Sample Area -->
 
-	<!-- Start Button -->
-	<section class="button-area">
+	<div id="order" class="modal">
+		<form class="modal-content animate" action="/action_page.php" method="post">
+			<div class="container">
+				<div class="imgcontainer" style="cursor:pointer">
+					<span onclick="document.getElementById('order').style.display='none'" class="close" title="Close Modal">&times;</span>
+				</div>
+				<h1>Pesan Layanan</h1>
+				<label for="namaPemesan">
+					<b>Nama :</b>
+					<input type="text" placeholder="Masukkan Nama Anda" name="namaPemesan" required>
+				</label>
+				<label for="alamatPemesan">
+					<b>Alamat :</b>
+					<input type="text" placeholder="Masukkan Alamat Anda" name="alamatPemesan" required>
+				</label>
+				<label for="kontakPemesan">
+					<b>No Hp :</b>
+					<input type="text" placeholder="Masukkan No HP Anda" name="kontakPemesan" required>
+				</label>
+				<hr style="margin-top:-10px;border:1px solid rgb(182, 182, 182)">
+				<h1>Rincian Pesanan</h1>
+				<div class="option">
+					<div class="row">
+						<div class="col-sm-6">
+							<input type="checkbox" id="bodyRepair" name="bodyRepair" value="Body Repair">
+							<label for="bodyRepair"> Body Repair</label>
+							<span>----------- Rp 100.000</span>
+							<br>
+							<input type="checkbox" id="gantiOliMobil" name="gantiOliMobil" value="Ganti Oli Mobil">
+							<label for="gantiOliMobil"> Ganti Oli Mobil</label>
+							<br>
+							<input type="checkbox" id="gantiBan" name="gantiBan" value="Ganti Ban">
+							<label for="gantiBan"> Ganti Ban</label>
+						</div>
+						<div class="col-sm-6">
+							<input type="checkbox" id="cekMesinMobil" name="cekMesinMobil" value="Cek Kondisi Mesin Mobil">
+							<label for="cekMesinMobil"> Cek Kondisi Mesin</label>
+							<br>
+							<input type="checkbox" id="gantiSukuCadangMobil" name="gantiSukuCadangMobil" value="Ganti Suku Cadang Mobil">
+							<label for="gantiSukuCadangMobil"> Ganti Suku Cadang</label>
+							<br>
+							<input type="checkbox" id="tuneUp" name="tuneUp" value="Tune Up">
+							<label for="tuneUp"> Tune Up</label>
+						</div>
+					</div>
 
-
-	</section>
-	<!-- End Button -->
-
-
-	<!-- End Align Area -->
+				</div>
+				<input type="submit" class="btn_3" value="Submit">
+			</div>
+		</form>
+	</div>
 
 	<!-- footer part start-->
 	<footer class="footer-area">
@@ -293,8 +358,8 @@
 									Copyright &copy;
 									<script>
 										document.write(new Date().getFullYear());
-									</script> 
-								
+									</script>
+
 									<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 								</p>
 							</div>
@@ -305,6 +370,254 @@
 		</div>
 	</footer>
 	<!-- footer part end-->
+
+	<script>
+		(function () {
+
+			var parent = document.querySelector("#rangeSlider");
+			if (!parent) return;
+
+			var
+				rangeS = parent.querySelectorAll("input[type=range]"),
+				numberS = parent.querySelectorAll("input[type=number]");
+
+			rangeS.forEach(function (el) {
+				el.oninput = function () {
+					var slide1 = parseFloat(rangeS[0].value),
+						slide2 = parseFloat(rangeS[1].value);
+
+					if (slide1 > slide2) {
+						[slide1, slide2] = [slide2, slide1];
+						// var tmp = slide2;
+						// slide2 = slide1;
+						// slide1 = tmp;
+					}
+
+					numberS[0].value = slide1;
+					numberS[1].value = slide2;
+				}
+			});
+
+			numberS.forEach(function (el) {
+				el.oninput = function () {
+					var number1 = parseFloat(numberS[0].value),
+						number2 = parseFloat(numberS[1].value);
+
+					if (number1 > number2) {
+						var tmp = number1;
+						numberS[0].value = number2;
+						numberS[1].value = tmp;
+					}
+
+					rangeS[0].value = number1;
+					rangeS[1].value = number2;
+
+				}
+			});
+
+		})();
+
+		var shoppingCart = (function () {
+			// =============================
+			// Private methods and propeties
+			// =============================
+			cart = [];
+
+			// Constructor
+			function Item(name, price, count) {
+				this.name = name;
+				this.price = price;
+				this.count = count;
+			}
+
+			// Save cart
+			function saveCart() {
+				sessionStorage.setItem('shoppingCart', JSON.stringify(cart));
+			}
+
+			// Load cart
+			function loadCart() {
+				cart = JSON.parse(sessionStorage.getItem('shoppingCart'));
+			}
+			if (sessionStorage.getItem("shoppingCart") != null) {
+				loadCart();
+			}
+
+
+			// =============================
+			// Public methods and propeties
+			// =============================
+			var obj = {};
+
+			// Add to cart
+			obj.addItemToCart = function (name, price, count) {
+				for (var item in cart) {
+					if (cart[item].name === name) {
+						cart[item].count++;
+						saveCart();
+						return;
+					}
+				}
+				var item = new Item(name, price, count);
+				cart.push(item);
+				saveCart();
+			}
+			// Set count from item
+			obj.setCountForItem = function (name, count) {
+				for (var i in cart) {
+					if (cart[i].name === name) {
+						cart[i].count = count;
+						break;
+					}
+				}
+			};
+			// Remove item from cart
+			obj.removeItemFromCart = function (name) {
+				for (var item in cart) {
+					if (cart[item].name === name) {
+						cart[item].count--;
+						if (cart[item].count === 0) {
+							cart.splice(item, 1);
+						}
+						break;
+					}
+				}
+				saveCart();
+			}
+
+			// Remove all items from cart
+			obj.removeItemFromCartAll = function (name) {
+				for (var item in cart) {
+					if (cart[item].name === name) {
+						cart.splice(item, 1);
+						break;
+					}
+				}
+				saveCart();
+			}
+
+			// Clear cart
+			obj.clearCart = function () {
+				cart = [];
+				saveCart();
+			}
+
+			// Count cart 
+			obj.totalCount = function () {
+				var totalCount = 0;
+				for (var item in cart) {
+					totalCount += cart[item].count;
+				}
+				return totalCount;
+			}
+
+			// Total cart
+			obj.totalCart = function () {
+				var totalCart = 0;
+				for (var item in cart) {
+					totalCart += cart[item].price * cart[item].count;
+				}
+				return Number(totalCart.toFixed(2));
+			}
+
+			// List cart
+			obj.listCart = function () {
+				var cartCopy = [];
+				for (i in cart) {
+					item = cart[i];
+					itemCopy = {};
+					for (p in item) {
+						itemCopy[p] = item[p];
+
+					}
+					itemCopy.total = Number(item.price * item.count).toFixed(2);
+					cartCopy.push(itemCopy)
+				}
+				return cartCopy;
+			}
+
+			// cart : Array
+			// Item : Object/Class
+			// addItemToCart : Function
+			// removeItemFromCart : Function
+			// removeItemFromCartAll : Function
+			// clearCart : Function
+			// countCart : Function
+			// totalCart : Function
+			// listCart : Function
+			// saveCart : Function
+			// loadCart : Function
+			return obj;
+		})();
+
+
+		// *****************************************
+		// Triggers / Events
+		// ***************************************** 
+		// Add item
+		$('.add-to-cart').click(function (event) {
+			event.preventDefault();
+			var name = $(this).data('name');
+			var price = Number($(this).data('price'));
+			shoppingCart.addItemToCart(name, price, 1);
+			displayCart();
+		});
+
+		// Clear items
+		$('.clear-cart').click(function () {
+			shoppingCart.clearCart();
+			displayCart();
+		});
+
+
+		function displayCart() {
+			var cartArray = shoppingCart.listCart();
+			var output = "";
+			for (var i in cartArray) {
+				output += "<tr>" +
+					"<td>" + cartArray[i].name + "</td>" +
+					"<td>(" + cartArray[i].price + ")</td>" +
+					"<td><div class='input-group'>"+
+					" = " +
+					"<td>" + cartArray[i].total + "</td>" +
+					"</tr>";
+			}
+			$('.show-cart').html(output);
+			$('.total-cart').html(shoppingCart.totalCart());
+			$('.total-count').html(shoppingCart.totalCount());
+		}
+
+		// Delete item button
+
+		$('.show-cart').on("click", ".delete-item", function (event) {
+			var name = $(this).data('name')
+			shoppingCart.removeItemFromCartAll(name);
+			displayCart();
+		})
+
+
+		// -1
+		$('.show-cart').on("click", ".minus-item", function (event) {
+			var name = $(this).data('name')
+			shoppingCart.removeItemFromCart(name);
+			displayCart();
+		})
+		// +1
+		$('.show-cart').on("click", ".plus-item", function (event) {
+			var name = $(this).data('name')
+			shoppingCart.addItemToCart(name);
+			displayCart();
+		})
+
+		// Item count input
+		$('.show-cart').on("change", ".item-count", function (event) {
+			var name = $(this).data('name');
+			var count = Number($(this).val());
+			shoppingCart.setCountForItem(name, count);
+			displayCart();
+		});
+		displayCart();
+	</script>
 
 	<!-- jquery plugins here-->
 	<!-- jquery -->
